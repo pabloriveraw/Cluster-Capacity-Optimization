@@ -146,5 +146,5 @@ models/
 Internal use only (or MIT if open-sourcing). Ensure no confidential data is committed.
 
 ## Acknowledgments
-This is Work in progress, I haven't bother anybody yet :-)   
+This is Work in progress, I haven't bothered anyone yet :-)   
 
