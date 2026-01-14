@@ -1,8 +1,9 @@
 # Cluster-Capacity-Optimization
 Generic Cluster Optimization Algorithm using MILP
 Very generic and early draft of what could be, this is Work in progress
-I'm still learning 
+
 Author: Pablo Rivera 
+
 A lightweight prototype that optimizes pilot-cluster capacity during PIVT. It
 uses daily node/vCPU usage signals plus test-team demand to compute allocations
 that maximize utilization, reduce conflicts, and minimize disruptive moves.
