@@ -1,8 +1,8 @@
 # Cluster-Capacity-Optimization
 Generic Cluster Optimization Algorithm using MILP
-Very generic and early draft of what could be, this is Work in progress
+Very generic and early draft of what could be the final solution
 
-Author: Pablo Rivera 
+This is Work in progress in its first version
 
 A lightweight prototype that optimizes pilot-cluster capacity during PIVT. It
 uses daily node/vCPU usage signals plus test-team demand to compute allocations
@@ -111,6 +111,52 @@ plt.show()
 ```
 
 ---
+# Simple Visualization Outputs
+
+## 1. Bar Chart – Real vs Projected vs Optimized
+```
+ClusterA: Real=8, Projected=10, Optimized=10, Capacity=10
+ClusterB: Real=4, Projected=7, Optimized=5, Capacity=8
+```
+A 3‑bar comparison per cluster with dashed capacity line.
+
+## 2. Stacked Bars – Test Composition per Cluster
+```
+ClusterA Optimized: ping=6, network=4
+ClusterB Optimized: stress=5
+```
+Shows which tests fill cluster capacity.
+
+## 3. Allocation Table
+```
+Test       | ClusterA | ClusterB | Required
+-------------------------------------------
+ping       |    6      |    0     |   6
+network    |    4      |    0     |   4
+stress     |    0      |    5     |   5
+```
+
+## 4. KPI Strip
+```
+Utilization: ClusterA=100% (10/10), ClusterB=62% (5/8)
+Fleet Utilization: 82% (15/18)
+Conflicts Resolved: 0
+Moves Proposed: 1
+```
+
+## 5. Recommendations Panel
+```
+• Move stress → ClusterB (cost=low)
+• ClusterA reaches 100% utilization
+• ClusterB retains 3 spare nodes for urgent asks
+• No quota expansion required
+```
+
+
+
+
+
+
 
 ## Modeling Options
 - **MILP (Mixed Integer Linear Programming):** linear constraints & objectives,
